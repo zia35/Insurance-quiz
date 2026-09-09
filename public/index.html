@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Insurance Quiz Portal</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="app">
+        <!-- Login Screen -->
+        <div id="loginScreen" class="screen active">
+            <div class="container">
+                <div class="card">
+                    <h1>Insurance Quiz Portal</h1>
+                    <p class="subtitle">Welcome! Please enter your name to begin the quiz.</p>
+                    <form id="loginForm">
+                        <div class="form-group">
+                            <label for="nameInput">Your Name:</label>
+                            <input type="text" id="nameInput" placeholder="Enter your full name" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Start Quiz</button>
+                    </form>
+                    <div id="loginError" class="error-message"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Quiz Screen -->
+        <div id="quizScreen" class="screen">
+            <div class="container">
+                <div class="quiz-header">
+                    <div class="participant-info">
+                        <p>Welcome, <strong id="participantName"></strong></p>
+                    </div>
+                    <div class="progress-bar">
+                        <div id="progressFill" class="progress-fill"></div>
+                    </div>
+                    <div class="progress-text">
+                        <span id="progressText">Question 1 of 5</span>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div id="questionContainer" class="question-container">
+                        <h2 id="questionText"></h2>
+                        <div id="optionsContainer" class="options-container"></div>
+                        <div id="feedbackContainer" class="feedback-container"></div>
+                    </div>
+
+                    <div class="quiz-controls">
+                        <button id="nextBtn" class="btn btn-primary" disabled>Next Question</button>
+                        <button id="skipBtn" class="btn btn-secondary">Skip Question</button>
+                    </div>
+
+                    <div id="quizError" class="error-message"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Results Screen -->
+        <div id="resultsScreen" class="screen">
+            <div class="container">
+                <div class="card">
+                    <div id="resultsSummary" class="results-summary">
+                        <h1 id="resultTitle"></h1>
+                        <div class="score-display">
+                            <div class="score-circle">
+                                <span id="scorePercentage"></span>
+                            </div>
+                            <p id="scoreText"></p>
+                        </div>
+                    </div>
+
+                    <div id="detailedResults" class="detailed-results"></div>
+
+                    <div class="results-actions">
+                        <button id="shareBtn" class="btn btn-primary">Share Results</button>
+                        <button id="retakeBtn" class="btn btn-secondary">Retake Quiz</button>
+                    </div>
+
+                    <div id="shareContainer" class="share-container" style="display: none;">
+                        <p>Share this link with others:</p>
+                        <div class="share-link">
+                            <input type="text" id="shareUrl" readonly>
+                            <button id="copyBtn" class="btn btn-small">Copy</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
